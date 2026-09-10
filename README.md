@@ -22,7 +22,7 @@ One page per nav item, all sharing `assets/`:
 
 | File | Holds |
 | --- | --- |
-| `index.html` | The full one-pager: hero, and every section below it |
+| `index.html` | The full one pager: hero, and every section below it |
 | `products.html` | The five product lines |
 | `about.html` | Company, vision and mission, packing |
 | `applications.html` | The six markets the wire serves |
@@ -42,12 +42,12 @@ so the pages still render with JavaScript disabled. Edit one, edit all six.
 
 - **Technical data.** The original site published its specification tables as JPEG scans.
   They are transcribed here into real, searchable HTML tables: copper covering gradewise
-  (SWG 8–43), submersible parameters, aluminium SWG/AWG conversions and thermal classes.
+  (SWG 8-43), submersible parameters, aluminium SWG/AWG conversions and thermal classes.
 - **Datasheet correction.** The source aluminium table lists AWG 35 as `0.008 mm`, which is a
   typo: AWG 35 is `0.142 mm`. The corrected value is used here and should be fixed in the
   source brochure.
 - **Photography.** Every supplied product photo had marketing text burned across the middle.
-  The text band is cut out and the frame rejoined, so the images carry no baked-in captions.
+  The text band is cut out and the frame rejoined, so the images carry no captions baked in.
 - **Hero photograph** is stock: ["A coil of copper wire on a table"](https://unsplash.com/photos/a-coil-of-copper-wire-on-a-table-TqueZSSAloY)
   by Guille B on Unsplash, used under the [Unsplash License](https://unsplash.com/license)
   (free for commercial use, no attribution required; credited here as a courtesy).
