@@ -19,17 +19,17 @@ if(yr)yr.textContent=new Date().getFullYear();
 /* ---------- card grids ---------- */
 var P=[
 ["enamelled","Enamelled Copper Wire","ETP-grade copper with polyester, polyesterimide or amide-imide covering for motors, generators and transformers."],
-["submersible","Submersible Copper Winding Wire","Poly-wrapped conductor for deep-well pump motors — moisture and corrosion resistant, stable to 200 °C."],
+["submersible","Submersible Copper Winding Wire","Poly-wrapped conductor for deep-well pump motors. Moisture and corrosion resistant, stable to 200 °C."],
 ["aluminium","Aluminium Winding Wire","High-purity aluminium for weight- and cost-sensitive windings, with the same coating discipline as our copper lines."],
 ["bare","Bare Copper Wire","Uncoated electrolytic copper, cadmium free. Used in overhead power sources, light poles, heavy appliances and machinery."],
 ["colored","Colored Copper Wire","Colour-coded enamel for fast circuit identification in the field, and for decorative and craft applications."]
 ];
 var A=[
 ["emobility","E-Mobility","Demand to electrify mobility keeps growing. We support the shift with sustainable, high-performance winding solutions."],
-["automotive","Automotive","From window regulators and electrified steering to ABS and transmission control — wire for every electric component."],
+["automotive","Automotive","From window regulators and electrified steering to ABS and transmission control: wire for every electric component."],
 ["drive","Drive Technology","Inverter-controlled motors keep conveyor belts and production lines moving, reliably and efficiently."],
 ["energy","Energy Transmission","Sustainable energy systems, climate protection and security of supply demand new answers in transmission."],
-["renewable","Renewable Energy","Responsible use of resources, affordability and supply security — renewables are more in demand than ever."],
+["renewable","Renewable Energy","Responsible use of resources, affordability and supply security. Renewables are more in demand than ever."],
 ["white","White Goods & Power Tools","Longevity under high load turns white goods into precious goods. Quality is what makes that promise hold."]
 ];
 
@@ -56,7 +56,7 @@ if(enq)enq.addEventListener("submit",function(e){
   var body=["Name: "+g("name"),"Company: "+g("company"),"City: "+g("city"),"Email: "+g("email"),
             "Mobile: "+g("mobile"),"Product: "+g("product"),"","Specification & volume:",g("message")].join("\n");
   window.location.href="mailto:info@ramacopper.com?subject="+
-    encodeURIComponent("Enquiry — "+g("product")+(g("company")?" — "+g("company"):""))+
+    encodeURIComponent("Enquiry: "+g("product")+(g("company")?", "+g("company"):""))+
     "&body="+encodeURIComponent(body);
   var fn=document.getElementById("formnote");
   if(fn)fn.innerHTML='Opening your mail client. If nothing happens, write to <a href="mailto:info@ramacopper.com">info@ramacopper.com</a>.';

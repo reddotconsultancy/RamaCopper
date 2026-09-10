@@ -1,4 +1,4 @@
-/* Specification tables — transcribed from the Rama datasheets.
+/* Specification tables, transcribed from the Rama datasheets.
    Loaded only by the pages that show them; exits quietly elsewhere. */
 (function(){
 "use strict";
@@ -64,18 +64,18 @@ var ALU=[
 [38,0.152,0.102]
 ];
 var THERMAL=[
-["Polyester","Class 130","IS 13730 Part-9","IEC 60317-9","—","Fine, Medium, Heavy"],
+["Polyester","Class 130","IS 13730 Part-9","IEC 60317-9","-","Fine, Medium, Heavy"],
 ["Modified Polyester","Class 155","IS 13730-24","IEC 60317-24","MW-24A","Fine, Medium, Heavy"],
 ["Polyesterimide","Class 180","IS 13730 Part-15","IEC 60317-15","MW-76A","Fine, Medium, Heavy"],
 ["Polyesterimide + amide-imide / DC","Class 220","IS 13730 Part-25","IEC 60317-25","MW-35A / 73A (Hermetic)","Fine, Medium, Heavy"],
 ["Self Solderable","Class 155, 180","IS 13730-51","IEC 60317-51","MW-80A","Fine, Medium, Heavy"]
 ];
 
-var f=function(v,d){return v===null||v===undefined?"—":Number(v).toFixed(d)};
+var f=function(v,d){return v===null||v===undefined?"-":Number(v).toFixed(d)};
 
 var TABLES={
  covering:{
-  note:"Covering gradewise of copper winding wires. Conductor resistance at 20 °C for 1 metre. Values marked — are not published for that gauge.",
+  note:"Covering gradewise of copper winding wires. Conductor resistance at 20 °C for 1 metre. A dash means the value is not published for that gauge.",
   head:'<tr class="grp"><th></th><th></th><th colspan="2">Fine · Grade 1</th><th colspan="2">Medium · Grade 2</th><th colspan="2">Thick · Grade 3</th><th colspan="3">Conductor resistance @ 20 °C (Ω/m)</th></tr>'+
        '<tr><th>SWG / mm</th><th>Cond. tol. mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Nominal</th><th>Maximum</th><th>Minimum</th></tr>',
   rows:COVERING.map(function(r){
@@ -83,9 +83,9 @@ var TABLES={
      '<td>'+f(r[3],3)+'</td><td class="k">'+f(r[4],3)+'</td>'+
      '<td>'+f(r[5],3)+'</td><td class="k">'+f(r[6],3)+'</td>'+
      '<td>'+f(r[7],3)+'</td><td class="k">'+f(r[8],3)+'</td>'+
-     '<td>'+(r[9]===null?'<span class="dim">—</span>':r[9])+'</td>'+
-     '<td class="'+(r[10]===null?'dim':'')+'">'+(r[10]===null?'—':r[10])+'</td>'+
-     '<td class="'+(r[11]===null?'dim':'')+'">'+(r[11]===null?'—':r[11])+'</td>';
+     '<td>'+(r[9]===null?'<span class="dim">-</span>':r[9])+'</td>'+
+     '<td class="'+(r[10]===null?'dim':'')+'">'+(r[10]===null?'-':r[10])+'</td>'+
+     '<td class="'+(r[11]===null?'dim':'')+'">'+(r[11]===null?'-':r[11])+'</td>';
   })},
  submersible:{
   note:"Submersible copper winding wires. * Indicative values; improvement is an ongoing process and efforts are made to exceed average value.",
@@ -115,7 +115,7 @@ var current="covering",
 function renderTable(){
   var t=TABLES[current],q=tsearch.value.trim().toLowerCase(),shown=0;
   var body=t.rows.map(function(c){
-    var plain=c.replace(/<[^>]+>/g," ").replace(/&middot;/g," ").replace(/&mdash;|—/g," ").toLowerCase();
+    var plain=c.replace(/<[^>]+>/g," ").replace(/&middot;/g," ").replace(/(^|\s)-(?=\s|$)/g," ").toLowerCase();
     if(q&&plain.indexOf(q)===-1)return "";
     shown++;return "<tr>"+c+"</tr>";
   }).join("");

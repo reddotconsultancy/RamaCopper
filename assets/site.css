@@ -11,7 +11,7 @@
   --accent:#E08A3F;
   --accent-soft:#241B12;
   --f-sans:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  /* one family throughout — display/mono survive as role hooks for the type scale */
+  /* one family throughout; display/mono survive as role hooks for the type scale */
   --f-display:var(--f-sans);
   --f-mono:var(--f-sans);
   --wrap:1220px;
@@ -29,7 +29,7 @@ body{
   font-family:var(--f-sans);font-size:16px;line-height:1.68;
   -webkit-font-smoothing:antialiased;
 }
-/* DM Sans is loaded at 300/400/500/600 + italic — heavier than that gets faked by the browser */
+/* DM Sans is loaded at 300/400/500/600 + italic; heavier than that gets faked by the browser */
 h1,h2,h3,h4{margin:0;font-weight:500;line-height:1.14;letter-spacing:-.024em;text-wrap:balance}
 p{margin:0}
 a{color:inherit}
@@ -316,7 +316,7 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .cinfo dd a{text-decoration:none;border-bottom:1px solid var(--line-2)}
 .cinfo dd a:hover{border-bottom-color:var(--accent);color:var(--accent)}
 .cinfo .phones{display:flex;flex-direction:column;align-items:flex-start;gap:6px;font-family:var(--f-mono);font-size:14px}
-/* stacked phone links would each draw a full-width rule — keep the underline for the single links only */
+/* stacked phone links would each draw a full-width rule, so keep the underline for the single links only */
 .cinfo .phones a{border-bottom:0}
 form.enq{display:flex;flex-direction:column;gap:15px}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:15px}
@@ -350,7 +350,7 @@ form.enq .btn{align-self:flex-start;margin-top:4px}
 .formnote a{color:var(--accent)}
 
 /* ================= FOOTER ================= */
-/* the footer is the base of the page — a deeper ground than the sections above */
+/* the footer is the base of the page, a deeper ground than the sections above */
 footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .fgrid{
   display:grid;grid-template-columns:minmax(0,1.7fr) repeat(3,minmax(0,1fr));
