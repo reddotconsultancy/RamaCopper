@@ -63,10 +63,12 @@ header.site{
 }
 @supports not (backdrop-filter:blur(10px)){header.site{background:#0C0D0C}}
 .bar{
-  display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:16px;
-  padding:9px var(--bar-x);
+  /* equal outer columns keep the nav on the true centre line of the page; each
+     column can still grow past its share if its content (logo or buttons) needs it */
+  display:grid;grid-template-columns:minmax(max-content,1fr) auto minmax(max-content,1fr);
+  align-items:center;gap:16px;padding:9px var(--bar-x);
 }
-.brand{display:flex;align-items:center;text-decoration:none;flex:none}
+.brand{display:flex;align-items:center;text-decoration:none;flex:none;justify-self:start}
 /* the artwork carries the wordmark, so nothing is set in type here */
 .brand img{display:block;width:auto;height:42px;flex:none}
 nav.main{
@@ -82,12 +84,18 @@ nav.main a{
 nav.main a:hover{color:var(--ink);border-bottom-color:var(--brand)}
 nav.main a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--brand)}
 nav.main a.cta{display:none}
+/* both buttons take the width of the wider one */
+.hdr-actions{justify-self:end;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:center;gap:8px}
 .hdr-btn{
-  justify-self:end;background:var(--brand);color:var(--btn-ink);text-decoration:none;
+  background:var(--brand);color:var(--btn-ink);text-decoration:none;
   font-size:10px;font-weight:500;letter-spacing:.11em;text-transform:uppercase;
-  padding:9px 15px;border-radius:3px;white-space:nowrap;transition:background .16s;
+  padding:8px 15px;border-radius:3px;border:1px solid var(--brand);white-space:nowrap;text-align:center;
+  transition:background .16s,border-color .16s;
 }
-.hdr-btn:hover{background:#FF9A33}
+.hdr-btn:hover{background:#FF9A33;border-color:#FF9A33}
+/* outlined twin of the quote button, for the brochure */
+.hdr-btn.hdr-line{background:transparent;color:var(--ink);border-color:rgba(240,238,234,.26)}
+.hdr-btn.hdr-line:hover{background:rgba(240,238,234,.08);border-color:rgba(240,238,234,.5)}
 .menu-btn{
   display:none;justify-self:end;width:38px;height:38px;border-radius:3px;
   border:1px solid rgba(240,238,234,.26);background:transparent;color:var(--ink);cursor:pointer;
@@ -95,7 +103,7 @@ nav.main a.cta{display:none}
 }
 @media(max-width:1080px){
   .bar{grid-template-columns:auto 1fr}
-  .hdr-btn{display:none}
+  .hdr-actions{display:none}
   .menu-btn{display:flex}
   nav.main{
     display:none;position:absolute;left:0;right:0;top:100%;
@@ -109,6 +117,9 @@ nav.main a.cta{display:none}
   nav.main a.cta{
     display:inline-flex;justify-content:center;margin-top:18px;border-bottom:0;
     background:var(--brand);color:var(--btn-ink);padding:14px 20px;border-radius:3px;font-weight:500;
+  }
+  nav.main a.cta-line{
+    margin-top:10px;background:transparent;color:var(--ink);border:1px solid rgba(240,238,234,.26);
   }
 }
 
@@ -292,7 +303,6 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .vm ul{margin:0;padding-left:16px;display:flex;flex-direction:column;gap:7px}
 .vm li{font-size:14.5px;color:var(--ink-2);line-height:1.55}
 .vm li::marker{color:var(--ink-3)}
-
 /* ================= DUO ================= */
 .duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,72px)}
 .duo.sub{margin-top:clamp(44px,6vw,76px);padding-top:clamp(34px,4.5vw,52px);border-top:1px solid var(--line)}
