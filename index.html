@@ -8,32 +8,32 @@
 <link rel="icon" href="assets/img/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Kaushan+Script&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <header class="site">
   <div class="bar">
-    <a class="brand" href="index.html" aria-label="Rama Winding Wires, home">
-      <img src="assets/img/logo.png" alt="" width="939" height="422">
-    </a>
-    <nav class="main" id="nav">
+    <div class="bar-top">
+      <p class="tag"><em>For</em><span><b>World class projects&hellip;</b>World class products&hellip;</span></p>
+      <a class="brand" href="index.html" aria-label="Rama Winding Wires, home">
+        <img src="assets/img/logo.png" alt="" width="939" height="422">
+      </a>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Menu">
+        <svg width="16" height="11" viewBox="0 0 16 11" fill="none" aria-hidden="true"><path d="M0 1h16M0 5.5h16M0 10h16" stroke="currentColor" stroke-width="1.3"/></svg>
+      </button>
+    </div>
+    <div class="bar-nav">
+      <nav class="main" id="nav">
       <a href="index.html" aria-current="page">Home</a>
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="applications.html">Applications</a>
       <a href="technical.html">Technical data</a>
-      <a class="cta" href="#contact">Request a quote</a>
-      <a class="cta cta-line" href="https://ramacopper.com/wp-content/uploads/2025/04/Rama-Brochure-1.pdf" target="_blank" rel="noopener">Download brochure</a>
+      <a href="contact.html">Contact</a>
     </nav>
-    <div class="hdr-actions">
-      <a class="hdr-btn hdr-line" href="https://ramacopper.com/wp-content/uploads/2025/04/Rama-Brochure-1.pdf" target="_blank" rel="noopener">Download brochure</a>
-      <a class="hdr-btn" href="#contact">Request a quote</a>
     </div>
-    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Menu">
-      <svg width="16" height="11" viewBox="0 0 16 11" fill="none" aria-hidden="true"><path d="M0 1h16M0 5.5h16M0 10h16" stroke="currentColor" stroke-width="1.3"/></svg>
-    </button>
   </div>
 </header>
 <main id="main">
@@ -43,11 +43,11 @@
   <img id="heroImg" src="assets/img/hero.jpg" alt="A coil of drawn copper winding wire">
   <div class="hero-in">
     <div class="intro">
-      <p class="eyebrow">Hyderabad &middot; Raghupati Wires India</p>
+      <p class="eyebrow">Hyderabad &middot; Raghupati Wires India Private Limited</p>
       <h1>Enamelled copper and aluminium wire, drawn to the tolerance <em>your winding demands</em>.</h1>
       <p class="txt">
         Winding wire for motors, transformers, submersible pumps and electric traction, drawn
-        from 99.97% ETP copper and coated on European enamelling lines at our Jeedimetla plant.
+        from 99.99% ETP copper and coated on European enamelling lines at our Jeedimetla plant.
       </p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="#contact">Request a quote</a>
@@ -56,7 +56,7 @@
     </div>
 
     <dl class="facts">
-      <div><dd>99.97%</dd><dt>ETP copper purity</dt></div>
+      <div><dd>99.99%</dd><dt>ETP copper purity</dt></div>
       <div><dd>SWG 8&ndash;43</dd><dt>Gauge range</dt></div>
       <div><dd>220&nbsp;°C</dd><dt>Maximum thermal class</dt></div>
       <div><dd>IS &middot; IEC &middot; NEMA</dd><dt>Manufactured to</dt></div>
@@ -157,7 +157,46 @@
   </div>
 </section>
 
-<section class="section" id="packing">
+<section class="section" id="sustainability">
+  <div class="wrap">
+    <div class="scard">
+      <div class="scopy">
+        <p class="label">Responsible manufacturing</p>
+        <h2>Responsible today.<em>Sustainable tomorrow.</em></h2>
+        <p class="lede">
+          Copper and aluminium are infinitely recyclable, and how they are processed matters. Our
+          operations are managed around resource efficiency, environmental compliance and a
+          continuous reduction of energy and water intensity.
+        </p>
+        <ul class="sgrid">
+        <li>
+          <span class="sicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 20c0-8 5-13 16-14-1 11-6 16-14 16" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M6 20c2-5 6-9 10-11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          <span>Environment management</span>
+        </li>
+        <li>
+          <span class="sicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+          <span>Energy efficiency</span>
+        </li>
+        <li>
+          <span class="sicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="M9 14.5a3 3 0 0 0 2.5 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></span>
+          <span>Water management</span>
+        </li>
+        <li>
+          <span class="sicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.5 8A7 7 0 0 0 5.6 9.5M6.5 16a7 7 0 0 0 11.9-1.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><path d="M5 5v4.5h4.5M19 19v-4.5h-4.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Recycling &amp; resource efficiency</span>
+        </li>
+        <li>
+          <span class="sicon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="1.5" stroke="currentColor" stroke-width="1.4"/><path d="M9 3.5h6v2H9z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><path d="m8.5 13 2.3 2.3L15.5 10.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span>Compliance with environmental norms</span>
+        </li>
+        </ul>
+      </div>
+      <img src="assets/img/renewable.jpg" alt="A field of solar panels under a clear sky" width="1320" height="880" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" id="packing" style="background:var(--bg-2)">
   <div class="wrap duo">
     <div>
       <p class="label">Packing</p>
@@ -171,58 +210,63 @@
   </div>
 </section>
 
-<section class="section" id="contact" style="background:var(--bg-2)">
+<section class="section" id="contact">
   <div class="wrap">
-    <div class="shead">
-      <p class="label">Contact</p>
-      <h2>Tell us the gauge, grade and volume.</h2>
-      <p class="lede">
-        Send the specification you need (conductor diameter, covering grade, thermal class and
-        annual volume) and we will reply promptly.
-      </p>
-    </div>
+    <div class="ctwo">
+      <div class="cintro">
+        <p class="label">Enquire now</p>
+        <h2>Tell us the gauge,<br>grade and volume <em>and we will quote it.</em></h2>
+        <p class="lede">
+          Reach out to our team directly. Pick the contact that fits your enquiry; your mail client
+          opens with a pre-filled subject, or copy the address and write from anywhere.
+        </p>
+        <ul class="cmeta">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 14.5s-4.5-4.2-4.5-7.5a4.5 4.5 0 0 1 9 0c0 3.3-4.5 7.5-4.5 7.5Z" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="7" r="1.6" stroke="currentColor" stroke-width="1.3"/></svg>
+            <span>Plot No. 61/D Part-1, Road No. 15, Phase-1,<br>Next to Pipe Line Road, I.D.A. Jeedimetla,<br>Hyderabad, Telangana, India - 500 055</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.2 1.8h2.4l1.2 3-1.5 1a8.4 8.4 0 0 0 4 4l1-1.5 3 1.2v2.4a1.3 1.3 0 0 1-1.4 1.3A11.6 11.6 0 0 1 1.9 3.2a1.3 1.3 0 0 1 1.3-1.4Z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            <span class="phones"><a href="tel:+919052240000">+91 90522 40000</a><a href="tel:+919052140000">+91 90521 40000</a><a href="tel:+919849218101">+91 98492 18101</a></span>
+          </li>
+        </ul>
+      </div>
 
-    <div class="cgrid">
-      <dl class="cinfo">
-        <div><dt>Email</dt><dd><a href="mailto:info@ramacopper.com">info@ramacopper.com</a></dd></div>
-        <div><dt>Factory address</dt><dd>Plot No. 61/D Part-1, Road No. 15, Phase-1,<br>Next to Pipe Line Road, I.D.A. Jeedimetla,<br>Hyderabad, Telangana, India - 500 055</dd></div>
-        <div><dt>Phone</dt><dd class="phones">
-          <a href="tel:+919052240000">+91 90522 40000</a>
-          <a href="tel:+919052140000">+91 90521 40000</a>
-          <a href="tel:+919849218101">+91 98492 18101</a>
-        </dd></div>
-        <div><dt>Technical support</dt><dd><a href="mailto:tech-support@ramacopper.com">tech-support@ramacopper.com</a></dd></div>
-      </dl>
-
-      <form class="enq" id="enq">
-        <div class="frow">
-          <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" required></div>
-          <div class="field"><label for="f-co">Company</label><input id="f-co" name="company"></div>
-        </div>
-        <div class="frow">
-          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" required></div>
-          <div class="field"><label for="f-mobile">Mobile</label><input id="f-mobile" name="mobile" type="tel"></div>
-        </div>
-        <div class="frow">
-          <div class="field"><label for="f-city">City</label><input id="f-city" name="city"></div>
-          <div class="field"><label for="f-product">Product</label>
-            <select id="f-product" name="product">
-              <option>Enamelled copper wire</option>
-              <option>Submersible copper winding wire</option>
-              <option>Aluminium winding wire</option>
-              <option>Bare copper wire</option>
-              <option>Colored copper wire</option>
-              <option>Not sure, please advise</option>
-            </select>
+      <div class="ccards">
+        <div class="ccard">
+          <div>
+            <h3>Sales enquiry</h3>
+            <p class="ck">Quotations &amp; orders</p>
+            <p class="cm"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="m2 4 5 3.5L12 4" stroke="currentColor" stroke-width="1.2"/></svg>info@ramacopper.com</p>
+          </div>
+          <div class="cbtns">
+            <button class="btn btn-line" type="button" data-copy="info@ramacopper.com"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="4" y="4" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M9 4V2.5A1 1 0 0 0 8 1.5H2.5a1 1 0 0 0-1 1V8a1 1 0 0 0 1 1H4" stroke="currentColor" stroke-width="1.2"/></svg><span>Copy</span></button>
+            <a class="btn btn-solid" href="mailto:info@ramacopper.com?subject=Enquiry%3A%20winding%20wire">Email <span aria-hidden="true">&rarr;</span></a>
           </div>
         </div>
-        <div class="field">
-          <label for="f-msg">Specification &amp; volume</label>
-          <textarea id="f-msg" name="message" placeholder="e.g. SWG 24, Grade 2 covering, Class 180, 4 tonnes/month"></textarea>
+        <div class="ccard">
+          <div>
+            <h3>Technical support</h3>
+            <p class="ck">Specifications &amp; standards</p>
+            <p class="cm"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><rect x="1.5" y="3" width="11" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="m2 4 5 3.5L12 4" stroke="currentColor" stroke-width="1.2"/></svg>tech-support@ramacopper.com</p>
+            <a class="clink" href="technical.html">View technical data <span aria-hidden="true">&rarr;</span></a>
+          </div>
+          <div class="cbtns">
+            <button class="btn btn-line" type="button" data-copy="tech-support@ramacopper.com"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true"><rect x="4" y="4" width="7.5" height="7.5" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M9 4V2.5A1 1 0 0 0 8 1.5H2.5a1 1 0 0 0-1 1V8a1 1 0 0 0 1 1H4" stroke="currentColor" stroke-width="1.2"/></svg><span>Copy</span></button>
+            <a class="btn btn-solid" href="mailto:tech-support@ramacopper.com?subject=Technical%20query%3A%20winding%20wire">Email <span aria-hidden="true">&rarr;</span></a>
+          </div>
         </div>
-        <button class="btn btn-solid" type="submit">Send enquiry</button>
-        <p class="formnote" id="formnote">Opens your mail client addressed to <a href="mailto:info@ramacopper.com">info@ramacopper.com</a>.</p>
-      </form>
+        <div class="ccard">
+          <div>
+            <h3>Product brochure</h3>
+            <p class="ck">Range, coverings &amp; thermal classes</p>
+            <p class="cm"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 1.5h5l3 3v8H3z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M8 1.5v3h3" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>PDF &middot; Rama-Brochure-1.pdf</p>
+          </div>
+          <div class="cbtns">
+            <a class="btn btn-solid" href="https://ramacopper.com/wp-content/uploads/2025/04/Rama-Brochure-1.pdf" target="_blank" rel="noopener">Download <span aria-hidden="true">&darr;</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -48,17 +48,14 @@ function fill(id,rows,cls){
 fill("pgrid",P,"pcard");
 fill("agrid",A,"acard");
 
-/* ---------- enquiry form (composes a mailto:) ---------- */
-var enq=document.getElementById("enq");
-if(enq)enq.addEventListener("submit",function(e){
-  e.preventDefault();
-  var d=new FormData(e.target),g=function(k){return (d.get(k)||"").toString().trim()};
-  var body=["Name: "+g("name"),"Company: "+g("company"),"City: "+g("city"),"Email: "+g("email"),
-            "Mobile: "+g("mobile"),"Product: "+g("product"),"","Specification & volume:",g("message")].join("\n");
-  window.location.href="mailto:info@ramacopper.com?subject="+
-    encodeURIComponent("Enquiry: "+g("product")+(g("company")?", "+g("company"):""))+
-    "&body="+encodeURIComponent(body);
-  var fn=document.getElementById("formnote");
-  if(fn)fn.innerHTML='Opening your mail client. If nothing happens, write to <a href="mailto:info@ramacopper.com">info@ramacopper.com</a>.';
+/* ---------- copy-to-clipboard on the contact cards ---------- */
+document.querySelectorAll("[data-copy]").forEach(function(b){
+  b.addEventListener("click",function(){
+    var lbl=b.querySelector("span"),txt=b.getAttribute("data-copy");
+    function done(){b.classList.add("copied");lbl.textContent="Copied";
+      setTimeout(function(){b.classList.remove("copied");lbl.textContent="Copy"},1600)}
+    if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done);
+    else{var t=document.createElement("textarea");t.value=txt;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();done()}
+  });
 });
 })();
