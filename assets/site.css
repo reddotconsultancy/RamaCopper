@@ -418,6 +418,45 @@ table.spec td.wide{white-space:normal;min-width:145px}
   .cbtns .btn{flex:1;justify-content:center}
 }
 
+/* ================= GALLERY ================= */
+.gset{margin-top:clamp(36px,5vw,64px)}
+.gset:first-of-type{margin-top:0}
+.ghead{display:flex;flex-direction:column;gap:8px;margin-bottom:22px;padding-bottom:18px;border-bottom:1px solid var(--line-2)}
+.ghead .label{color:var(--ink-3)}
+.ghead h2{font-size:clamp(26px,3vw,38px);line-height:1.1;margin:0;letter-spacing:-.015em}
+.ghead h2 em{font-style:normal;color:var(--brand)}
+.ghead p{margin:0;color:var(--ink-2);font-size:15px;max-width:60ch}
+/* fixed row height and a dense flow give a masonry feel without JavaScript */
+.ggrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:210px;grid-auto-flow:dense;gap:10px}
+.gi{display:block;position:relative;overflow:hidden;border-radius:3px;background:var(--bg-2)}
+.gi img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1),opacity .3s}
+.gi:hover img{transform:scale(1.03)}
+.gi::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none}
+.gi.wide{grid-column:span 2;grid-row:span 2}
+.gi.tall{grid-row:span 2}
+@media(max-width:1000px){.ggrid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:190px}}
+@media(max-width:640px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:6px}}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:60;background:rgba(8,9,8,.94);display:grid;grid-template-columns:auto 1fr auto;align-items:center;padding:20px}
+.lb[hidden]{display:none}
+.lb figure{margin:0;display:flex;flex-direction:column;align-items:center;gap:14px;min-width:0}
+.lb img{max-width:min(100%,1400px);max-height:calc(100dvh - 110px);object-fit:contain;border-radius:3px}
+.lb figcaption{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-align:center}
+.lb button{
+  background:transparent;border:1px solid rgba(240,238,234,.26);color:var(--ink);cursor:pointer;
+  width:42px;height:42px;border-radius:50%;font-size:18px;display:flex;align-items:center;justify-content:center;
+  transition:border-color .16s,background .16s;
+}
+.lb button:hover{border-color:var(--brand);background:rgba(245,135,31,.12)}
+.lb-x{position:absolute;top:18px;right:18px}
+@media(max-width:640px){
+  .lb{grid-template-columns:1fr;padding:12px}
+  .lb-p,.lb-n{position:absolute;bottom:16px}
+  .lb-p{left:16px}.lb-n{right:16px}
+  .lb img{max-height:calc(100dvh - 140px)}
+}
+
 /* ================= FOOTER ================= */
 /* the footer is the base of the page, a deeper ground than the sections above */
 footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
