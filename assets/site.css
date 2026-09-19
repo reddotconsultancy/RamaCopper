@@ -529,3 +529,48 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
   .tscroll{max-height:440px}
 
 }
+
+/* ================= DETAIL PAGES (one per product / application) ================= */
+.crumb{font-family:var(--f-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3);margin-bottom:26px}
+.crumb a{color:var(--ink-2);text-decoration:none}
+.crumb a:hover{color:var(--accent)}
+.crumb span{margin-inline:8px}
+.dphoto{margin:0;overflow:hidden;border-radius:3px;background:var(--bg-2);aspect-ratio:3/2}
+.dphoto img{width:100%;height:100%;object-fit:cover;display:block}
+.dcopy .shead{margin-bottom:22px}
+.dcopy>p{color:var(--ink-2);line-height:1.7;margin-bottom:16px}
+.dcopy h2{font-size:18px;margin:30px 0 10px}
+.dcopy .lines{margin-top:24px;margin-bottom:8px}
+.dcopy .lines li{white-space:normal;text-align:right}
+.dcopy .lines li span{text-align:left;flex:0 0 auto}
+.dlinks{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.dlinks a{display:inline-block;padding:8px 14px;border:1px solid var(--line-2);border-radius:3px;font-size:14px;color:var(--ink);text-decoration:none;transition:border-color .16s,color .16s}
+.dlinks a:hover{border-color:var(--accent);color:var(--accent)}
+.dcta{margin-top:30px}
+
+/* ================= APPLICATION ARTICLES ================= */
+.phead{padding-bottom:0}
+.phead h1{font-size:clamp(26px,3.6vw,44px);max-width:20ch;line-height:1.12;letter-spacing:-.02em;margin:12px 0 18px}
+.phead .lede{font-size:18px;max-width:64ch}
+.pmeta{margin-top:18px;font-family:var(--f-mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-3)}
+.pmeta span{margin-inline:8px}
+.phero{margin-top:clamp(28px,4vw,48px)}
+.phero img{width:100%;height:auto;aspect-ratio:2.4/1;object-fit:cover;border-radius:3px;display:block}
+.pgridl{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(30px,6vw,90px);padding-block:clamp(36px,5vw,64px)}
+.paside{position:sticky;top:calc(var(--hdr) + 24px);display:flex;flex-direction:column;gap:28px}
+.ptoc ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.ptoc li{border-top:1px solid var(--line)}
+.ptoc li:last-child{border-bottom:1px solid var(--line)}
+.ptoc a{display:block;padding:10px 0;font-size:14px;color:var(--ink-2);text-decoration:none;line-height:1.4}
+.ptoc a:hover{color:var(--accent)}
+.pwires .label{margin-bottom:12px}
+.paside .btn{align-self:flex-start}
+.pbody{max-width:68ch}
+.pbody h2{font-size:clamp(19px,2vw,24px);margin:38px 0 14px;letter-spacing:-.015em;scroll-margin-top:calc(var(--hdr) + 20px)}
+.pbody h2:first-child{margin-top:0}
+.pbody p{font-size:16.5px;line-height:1.72;color:var(--ink-2);margin-bottom:18px}
+.ptake{margin:40px 0;padding:22px 26px;border-left:2px solid var(--accent);background:var(--bg-2);border-radius:0 3px 3px 0}
+.ptake ul{margin:12px 0 0;padding-left:18px}
+.ptake li{font-size:15px;line-height:1.6;color:var(--ink);margin-bottom:8px}
+.pcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+@media(max-width:900px){.pgridl{grid-template-columns:1fr}.paside{position:static}}

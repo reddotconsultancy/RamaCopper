@@ -28,6 +28,13 @@ One page per nav item, all sharing `assets/`:
 | `applications.html` | The six markets the wire serves |
 | `technical.html` | The four specification tables |
 | `contact.html` | Enquiry form and company details |
+| `enamelled-copper-wire.html` … (5 files) | One detail page per product line |
+| `electric-mobility.html` … (6 files) | One article per application (blog style: hero, sticky contents, sectioned body, takeaways, FAQ) |
+
+Each detail page has the photo, a longer description, a facts list, a "See also" grid of the
+siblings, and ends with the same contact block as `contact.html`. The product and application
+cards (built by `site.js`) and the footer product links all point at these pages. The slugs live
+in the `P` and `A` arrays in `assets/site.js`; add a page there and it appears in the grids.
 
 `assets/site.css` carries all styling. `assets/site.js` holds the shared behaviour
 (mobile nav, card grids, enquiry form) and guards every block, so a page that lacks
