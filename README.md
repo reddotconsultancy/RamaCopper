@@ -47,6 +47,12 @@ so the pages still render with JavaScript disabled. Edit one, edit all six.
 
 ## Notes
 
+- **Favicon** (`favicon-32.png`, `favicon-192.png`, `apple-touch-icon.png`) is the orange mark from the
+  live site. **Sharing previews**: every page carries Open Graph and Twitter card tags plus a canonical
+  link, with absolute URLs that assume the site lives at the root of `https://ramacopper.com/`;
+  change `BASE` in the head of each page if hosted elsewhere. Each page's share image is its own
+  product or application photograph; the one pager and company pages use the hero.
+
 - **Technical data.** The original site published its specification tables as JPEG scans.
   They are transcribed here into real, searchable HTML tables: copper covering gradewise
   (SWG 8-43), submersible parameters, aluminium SWG/AWG conversions and thermal classes.
