@@ -41,7 +41,7 @@ function card(cls,r){
 /* every card opens its own detail page (which ends with the contact block) */
 function fill(id,rows,cls){
   var el=document.getElementById(id);
-  if(!el)return;
+  if(!el||el.children.length)return;   /* the pages ship these cards as static HTML */
   el.innerHTML=rows.map(function(r){return card(cls,r)}).join("");
 }
 fill("pgrid",P,"pcard");

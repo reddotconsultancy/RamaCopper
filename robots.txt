@@ -1,0 +1,6 @@
+# Rama Winding Wires: every page is public. Search engines and AI answer engines
+# (GPTBot, ClaudeBot, PerplexityBot, Google-Extended and others) are all welcome.
+User-agent: *
+Allow: /
+
+Sitemap: https://ramacopper.com/sitemap.xml

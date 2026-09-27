@@ -2,6 +2,38 @@
    Loaded only by the pages that show them; exits quietly elsewhere. */
 (function(){
 "use strict";
+
+/* technical.html ships the tables as static HTML (tools/prerender-tables.js),
+   so here the tabs only switch panels and the search only hides rows. */
+var panels=document.querySelectorAll("[data-panel]");
+if(panels.length){
+  var cur="covering",q=document.getElementById("tsearch"),
+      note=document.getElementById("tnote"),count=document.getElementById("tcount");
+  var show=function(){
+    var s=q.value.trim().toLowerCase();
+    panels.forEach(function(p){
+      p.hidden=p.dataset.panel!==cur;
+      if(p.hidden)return;
+      var rows=p.querySelectorAll("tbody tr"),n=0;
+      rows.forEach(function(r){
+        var t=r.textContent.replace(/·/g," ").replace(/(^|\s)-(?=\s|$)/g," ").toLowerCase();
+        r.hidden=!!s&&t.indexOf(s)===-1;if(!r.hidden)n++;
+      });
+      note.textContent=n?p.dataset.note:"No rows match “"+q.value+"”";
+      count.textContent=n+" of "+rows.length+" rows";
+    });
+  };
+  document.querySelectorAll(".tabs button").forEach(function(b){
+    b.addEventListener("click",function(){
+      document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected","false")});
+      b.setAttribute("aria-selected","true");cur=b.dataset.tab;show();
+    });
+  });
+  q.addEventListener("input",show);
+  show();
+  return;
+}
+
 var tbl=document.getElementById("tbl");
 if(!tbl)return;
 

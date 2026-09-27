@@ -1,0 +1,234 @@
+{
+  "redirects": [
+    {
+      "source": "/about-us",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/packing",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/packing/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/quality",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/quality/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/career",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/career/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/products",
+      "destination": "/products.html",
+      "permanent": true
+    },
+    {
+      "source": "/products/",
+      "destination": "/products.html",
+      "permanent": true
+    },
+    {
+      "source": "/applications",
+      "destination": "/applications.html",
+      "permanent": true
+    },
+    {
+      "source": "/applications/",
+      "destination": "/applications.html",
+      "permanent": true
+    },
+    {
+      "source": "/technical-data",
+      "destination": "/technical.html",
+      "permanent": true
+    },
+    {
+      "source": "/technical-data/",
+      "destination": "/technical.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/enamelled-copper-wire",
+      "destination": "/enamelled-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/enamelled-copper-wire/",
+      "destination": "/enamelled-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/submersible-copper-winding-wire",
+      "destination": "/submersible-copper-winding-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/submersible-copper-winding-wire/",
+      "destination": "/submersible-copper-winding-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/aluminium-winding-wire",
+      "destination": "/aluminium-winding-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/aluminium-winding-wire/",
+      "destination": "/aluminium-winding-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/bare-copper-wire",
+      "destination": "/bare-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/bare-copper-wire/",
+      "destination": "/bare-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/colored-copper-wire",
+      "destination": "/colored-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/colored-copper-wire/",
+      "destination": "/colored-copper-wire.html",
+      "permanent": true
+    },
+    {
+      "source": "/e-mobility",
+      "destination": "/electric-mobility.html",
+      "permanent": true
+    },
+    {
+      "source": "/e-mobility/",
+      "destination": "/electric-mobility.html",
+      "permanent": true
+    },
+    {
+      "source": "/automotive",
+      "destination": "/automotive.html",
+      "permanent": true
+    },
+    {
+      "source": "/automotive/",
+      "destination": "/automotive.html",
+      "permanent": true
+    },
+    {
+      "source": "/drive-technology",
+      "destination": "/drive-technology.html",
+      "permanent": true
+    },
+    {
+      "source": "/drive-technology/",
+      "destination": "/drive-technology.html",
+      "permanent": true
+    },
+    {
+      "source": "/energy-transmission",
+      "destination": "/energy-transmission.html",
+      "permanent": true
+    },
+    {
+      "source": "/energy-transmission/",
+      "destination": "/energy-transmission.html",
+      "permanent": true
+    },
+    {
+      "source": "/renewable-energy",
+      "destination": "/renewable-energy.html",
+      "permanent": true
+    },
+    {
+      "source": "/renewable-energy/",
+      "destination": "/renewable-energy.html",
+      "permanent": true
+    },
+    {
+      "source": "/white-goods",
+      "destination": "/white-goods-power-tools.html",
+      "permanent": true
+    },
+    {
+      "source": "/white-goods/",
+      "destination": "/white-goods-power-tools.html",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/category/uncategorized/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/page-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/post-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/category-sitemap.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+# Apache (the current ramacopper.com host). Vercel reads vercel.json instead.
+
+ErrorDocument 404 /404.html
+
+# One canonical origin: https://ramacopper.com
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://ramacopper.com%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Old WordPress addresses, so their rankings and backlinks carry over
+RedirectMatch 301 ^/about-us/?$ /about.html
+RedirectMatch 301 ^/packing/?$ /about.html
+RedirectMatch 301 ^/quality/?$ /about.html
+RedirectMatch 301 ^/career/?$ /contact.html
+RedirectMatch 301 ^/products/?$ /products.html
+RedirectMatch 301 ^/applications/?$ /applications.html
+RedirectMatch 301 ^/technical-data/?$ /technical.html
+RedirectMatch 301 ^/contact-us/?$ /contact.html
+RedirectMatch 301 ^/enamelled-copper-wire/?$ /enamelled-copper-wire.html
+RedirectMatch 301 ^/submersible-copper-winding-wire/?$ /submersible-copper-winding-wire.html
+RedirectMatch 301 ^/aluminium-winding-wire/?$ /aluminium-winding-wire.html
+RedirectMatch 301 ^/bare-copper-wire/?$ /bare-copper-wire.html
+RedirectMatch 301 ^/colored-copper-wire/?$ /colored-copper-wire.html
+RedirectMatch 301 ^/e-mobility/?$ /electric-mobility.html
+RedirectMatch 301 ^/automotive/?$ /automotive.html
+RedirectMatch 301 ^/drive-technology/?$ /drive-technology.html
+RedirectMatch 301 ^/energy-transmission/?$ /energy-transmission.html
+RedirectMatch 301 ^/renewable-energy/?$ /renewable-energy.html
+RedirectMatch 301 ^/white-goods/?$ /white-goods-power-tools.html
+RedirectMatch 301 ^/hello-world/?$ /
+RedirectMatch 301 ^/category/uncategorized/?$ /
+RedirectMatch 301 ^/(page|post|category)-sitemap\.xml$ /sitemap.xml
+RedirectMatch 301 ^/sitemap_index\.xml$ /sitemap.xml
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/xml image/svg+xml
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType text/css "access plus 1 day"
+  ExpiresByType application/javascript "access plus 1 day"
+</IfModule>

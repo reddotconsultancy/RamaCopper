@@ -43,7 +43,28 @@ loaded only by the two pages that show them. The thirteen photographs and the lo
 live in `assets/img/`.
 
 Header and footer markup is repeated in each page rather than injected by script,
-so the pages still render with JavaScript disabled. Edit one, edit all six.
+so the pages still render with JavaScript disabled. Edit one, edit all eighteen (and `404.html`).
+
+## Search and answer engines
+
+| File | Does |
+| --- | --- |
+| `robots.txt` | Allows every crawler, AI answer engines included, and points at the sitemap |
+| `sitemap.xml` | All 18 pages. Add new pages here and bump `lastmod` when a page changes |
+| `llms.txt` | Plain text summary of the company, products and pages for LLM crawlers |
+| `404.html` | `noindex` error page with root-absolute paths, so it works at any depth |
+| `.htaccess` | Apache: https + non-www, 404 page, compression, caching, and 301s from the old WordPress URLs |
+| `vercel.json` | The same 301s, for Vercel |
+
+Every page carries one JSON-LD `@graph`: the `Organization` and `WebSite` (same `@id`s on every
+page), the page itself, a `BreadcrumbList`, plus a `Product` on each product page and an `Article`
+on each application page. Product and application cards are written into the HTML (not built by
+script), so crawlers that do not run JavaScript still see them; `site.js` only fills a grid that
+is empty. **Technical tables** are written into `technical.html` from the data in `tech.js`; after
+editing that data, run `node tools/prerender-tables.js`. The one pager still builds its table in
+the browser.
+
+Titles are kept under 60 characters and descriptions between 110 and 160.
 
 ## Notes
 
