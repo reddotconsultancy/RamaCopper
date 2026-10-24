@@ -365,7 +365,7 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .scopy .label::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:1px;background:var(--brand)}
 .scopy h2{font-size:clamp(28px,3.4vw,44px);line-height:1.1;margin:0;letter-spacing:-.015em}
 .scopy h2 em{display:block;font-style:normal;color:var(--brand)}
-/* the second headline line is the longest (about 11em): size it to its column so it never wraps */
+/* the headline is one line of about 11em: size it to its column so it never wraps */
 @supports (font-size:1cqi){
   .scopy{container-type:inline-size}
   .scopy h2{font-size:min(clamp(28px,3.4vw,44px),8.8cqi)}
