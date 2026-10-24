@@ -52,6 +52,8 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 9px)}
 /* readable to screen readers and search engines, invisible on screen */
 .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .skip:focus{left:8px;top:8px}
+/* keeps a hyphenated term such as "(EC-grade)" on one line */
+.nw{white-space:nowrap}
 
 .label{
   font-family:var(--f-mono);font-size:11px;font-weight:400;
@@ -363,7 +365,16 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .scopy .label::after{content:"";position:absolute;left:0;bottom:0;width:48px;height:1px;background:var(--brand)}
 .scopy h2{font-size:clamp(28px,3.4vw,44px);line-height:1.1;margin:0;letter-spacing:-.015em}
 .scopy h2 em{display:block;font-style:normal;color:var(--brand)}
+/* the second headline line is the longest (about 11em): size it to its column so it never wraps */
+@supports (font-size:1cqi){
+  .scopy{container-type:inline-size}
+  .scopy h2{font-size:min(clamp(28px,3.4vw,44px),8.8cqi)}
+}
 .scopy .lede{max-width:52ch}
+.scopy .more{margin-top:-22px}
+/* a thumb sized tap area for the small link, with no change to how it looks */
+.scopy .more .clink{position:relative}
+.scopy .more .clink::after{content:"";position:absolute;inset:-12px -10px}
 .sgrid{
   list-style:none;margin:10px 0 0;padding:0;
   display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px;

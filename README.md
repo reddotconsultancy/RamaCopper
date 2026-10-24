@@ -29,6 +29,7 @@ One page per nav item, all sharing `assets/`:
 | `technical.html` | The four specification tables |
 | `contact.html` | Enquiry form and company details |
 | `enamelled-copper-wire.html` … (5 files) | One detail page per product line |
+| `responsible-manufacturing.html` | The full Responsible manufacturing text; the home page panel shows its key line and links here with Read more |
 | `electric-mobility.html` … (6 files) | One article per application (blog style: hero, sticky contents, sectioned body, takeaways, FAQ) |
 
 Each detail page has the photo, a longer description, a facts list, a "See also" grid of the
@@ -43,14 +44,14 @@ loaded only by the two pages that show them. The thirteen photographs and the lo
 live in `assets/img/`.
 
 Header and footer markup is repeated in each page rather than injected by script,
-so the pages still render with JavaScript disabled. Edit one, edit all eighteen (and `404.html`).
+so the pages still render with JavaScript disabled. Edit one, edit all nineteen (and `404.html`).
 
 ## Search and answer engines
 
 | File | Does |
 | --- | --- |
 | `robots.txt` | Allows every crawler, AI answer engines included, and points at the sitemap |
-| `sitemap.xml` | All 18 pages. Add new pages here and bump `lastmod` when a page changes |
+| `sitemap.xml` | All 19 pages. Add new pages here and bump `lastmod` when a page changes |
 | `llms.txt` | Plain text summary of the company, products and pages for LLM crawlers |
 | `404.html` | `noindex` error page with root-absolute paths, so it works at any depth |
 | `.htaccess` | Apache: https + non-www, 404 page, compression, caching, and 301s from the old WordPress URLs |
