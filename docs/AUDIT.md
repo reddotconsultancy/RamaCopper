@@ -69,3 +69,60 @@ purpose.
   "World Class" to match the brand usage.
 - **"aluminium" lowercase in the hero `h1`** where the brand treats "Aluminium
   Winding Wire" as a product name.
+
+---
+
+# After the fix round
+
+## Scores
+
+| Area | Before | After | What changed |
+|---|---:|---:|---|
+| Crawl & indexing | 92 | 96 | `lastmod` refreshed across the sitemap |
+| Meta & social cards | 88 | 98 | `theme-color` on all 20; stale `og:image` dimensions corrected |
+| Structured data | 74 | 92 | FAQPage on 5 product pages, `areaServed` on Organization |
+| Semantics & a11y | 90 | 95 | tabs are a real tablist with arrow-key support |
+| Performance | 71 | 90 | WebP everywhere, 37% smaller payload |
+| **Typography consistency** | **42** | **99** | **one scale, every value a token** |
+| Visual bugs | 60 | 100 | all three reported bugs fixed, plus one found in passing |
+| **Overall** | **74** | **95** | |
+
+## Verified
+
+Every page was loaded in headless Chromium at 1440px and 390px, scrolled to the
+bottom to commit lazy images, and checked for JS errors, failed requests, broken
+images and horizontal overflow.
+
+**All 20 pages clean at both widths.**
+
+- JSON-LD on every page parses
+- 166 `<img>` served through `<picture>` with a WebP source and original fallback
+- 0 images without `alt`; 1 without `width`/`height`, the lightbox placeholder,
+  which is sized at runtime and correct
+- Both specification-table widgets still switch, on `technical.html` and the homepage
+- Gallery lightbox opens, navigates by arrow key, closes on Escape, serves WebP
+
+## Bug found while working
+
+`tech.js` bound a click handler to **every** `.tabs button` on the page rather
+than its own. The homepage carries a specification table, so `tech.js` runs there
+in full. Adding a second `.tabs` block to the homepage made it read
+`dataset.tab` from buttons that did not have it and throw on
+`TABLES[undefined].rows`. Its selectors are now scoped to `[data-tab]`.
+
+This was latent before this round: any second use of `.tabs` on a page with a
+spec table would have hit it.
+
+## Not done
+
+**`sameAs` is still absent, and the "Follow us" block is not built.** Both need
+the four real social profile URLs (X, Facebook, LinkedIn, Instagram). These
+cannot be guessed — a wrong URL in `sameAs` actively misleads Google about which
+accounts belong to the brand. Supply the four and both land in one change.
+
+## Scale note
+
+Typography scores 99 rather than 100 because three values remain outside the
+token set by design: the `@supports (font-size:1cqi)` feature test, and the two
+`em`-relative sizes for the cursive "For", which must scale with their own line
+rather than the global scale.

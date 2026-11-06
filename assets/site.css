@@ -673,3 +673,18 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
   }
   .xpanel{padding-top:22px}
 }
+
+/* ================= INTERNATIONAL MARKETS BAND ================= */
+.mkt{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(30px,5vw,72px);align-items:center}
+@media(max-width:860px){.mkt{grid-template-columns:1fr}}
+.mktcopy h2{margin:0 0 20px}
+.mktcopy h2 em{font-style:normal;color:var(--brand)}
+.mktcopy>p{color:var(--ink-2);line-height:var(--lh-relaxed);font-size:var(--fs-lede);max-width:56ch;margin:0}
+.mktpanel{border:1px solid var(--line);padding:clamp(22px,2.6vw,32px);background:var(--bg)}
+.mktlist{margin:0 0 26px;display:flex;flex-direction:column;gap:16px}
+.mktlist div{display:flex;flex-direction:column;gap:5px}
+.mktlist dt{
+  font-size:var(--fs-label);letter-spacing:var(--ls-caps);text-transform:uppercase;color:var(--ink-3);
+}
+.mktlist dd{margin:0;font-size:var(--fs-body);color:var(--ink);line-height:var(--lh-heading)}
+.mktcta{margin:0}
