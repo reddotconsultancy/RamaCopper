@@ -32,12 +32,17 @@
     },
     {
       "source": "/career",
-      "destination": "/contact.html",
+      "destination": "/careers.html",
       "permanent": true
     },
     {
       "source": "/career/",
-      "destination": "/contact.html",
+      "destination": "/careers.html",
+      "permanent": true
+    },
+    {
+      "source": "/careers",
+      "destination": "/careers.html",
       "permanent": true
     },
     {

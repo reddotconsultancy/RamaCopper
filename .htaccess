@@ -14,7 +14,7 @@ ErrorDocument 404 /404.html
 RedirectMatch 301 ^/about-us/?$ /about.html
 RedirectMatch 301 ^/packing/?$ /about.html
 RedirectMatch 301 ^/quality/?$ /about.html
-RedirectMatch 301 ^/career/?$ /contact.html
+RedirectMatch 301 ^/careers?/?$ /careers.html
 RedirectMatch 301 ^/products/?$ /products.html
 RedirectMatch 301 ^/applications/?$ /applications.html
 RedirectMatch 301 ^/technical-data/?$ /technical.html

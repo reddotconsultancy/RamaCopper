@@ -1,6 +1,6 @@
 # Rama Winding Wires
 
-> Rama Winding Wires is the brand of Raghupati Wires India Private Limited, a manufacturer of enamelled copper, aluminium, submersible, bare and colored winding wire at I.D.A. Jeedimetla, Hyderabad, Telangana, India. Wire is drawn from 99.99% ETP copper, coated on European enamelling lines, and made to IS 13730, IEC 60317 and NEMA MW, in thermal classes from 130 to 220 °C and gauges SWG 8 to 43.
+> Rama Winding Wires is the brand of Raghupati Wires India Private Limited, a manufacturer of enamelled copper, aluminium, submersible, bare and colored winding wire at I.D.A. Jeedimetla, Hyderabad, Telangana, India. Wire is drawn from 99.99% ETP copper, coated on European and Chinese enamelling lines, and made to IS 13730, IEC 60317 and NEMA MW, in thermal classes from 130 to 220 °C and gauges SWG 8 to 43.
 
 Contact: info@ramacopper.com (sales), tech-support@ramacopper.com (specifications), +91 90522 40000. Address: Plot No. 61/D Part-1, Road No. 15, Phase-1, Next to Pipe Line Road, I.D.A. Jeedimetla, Hyderabad, Telangana 500055, India.
 
@@ -32,4 +32,5 @@ To request a quote, send the conductor diameter or SWG, covering grade, thermal 
 - [About](https://ramacopper.com/about.html): company, vision, mission and Managing Director Rajendra Agarwal.
 - [Responsible manufacturing](https://ramacopper.com/responsible-manufacturing.html): Electrolytic Copper (EC-grade) rods as the primary raw material, efficient processes, and responsible use of energy and water.
 - [Gallery](https://ramacopper.com/gallery.html): the Rama stand at FAN EXPO, Hyderabad and Greater Noida.
+- [Careers](https://ramacopper.com/careers.html): the areas Rama hires into, and where to send a CV.
 - [Contact](https://ramacopper.com/contact.html): request a quote.
