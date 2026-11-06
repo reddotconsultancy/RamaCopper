@@ -2,12 +2,17 @@
 (function(){
 var tiles=[].slice.call(document.querySelectorAll(".gi")),lb=document.getElementById("lb");
 if(!tiles.length||!lb)return;
+function webp(u){return u.replace(/\.(jpe?g|png)$/i,".webp")}
 var img=document.getElementById("lbImg"),cap=document.getElementById("lbCap"),i=0;
 function show(n){
   i=(n+tiles.length)%tiles.length;
-  img.src=tiles[i].getAttribute("href");img.alt=tiles[i].getAttribute("data-cap")||"";
+  var href=tiles[i].getAttribute("href");
+  /* the anchor keeps the .jpg so saving the image still works; the lightbox
+     asks for the .webp first and falls back if the browser cannot decode it */
+  img.onerror=function(){img.onerror=null;img.src=href};
+  img.src=webp(href);img.alt=tiles[i].getAttribute("data-cap")||"";
   cap.textContent=img.alt;
-  var pre=new Image();pre.src=tiles[(i+1)%tiles.length].getAttribute("href");
+  var pre=new Image();pre.src=webp(tiles[(i+1)%tiles.length].getAttribute("href"));
 }
 function open(n){show(n);lb.hidden=false;document.body.style.overflow="hidden";document.getElementById("lbX").focus()}
 function close(){lb.hidden=true;document.body.style.overflow="";tiles[i].focus()}
