@@ -23,9 +23,9 @@ if(panels.length){
       count.textContent=n+" of "+rows.length+" rows";
     });
   };
-  document.querySelectorAll(".tabs button").forEach(function(b){
+  document.querySelectorAll(".tabs button[data-tab]").forEach(function(b){
     b.addEventListener("click",function(){
-      document.querySelectorAll(".tabs button").forEach(function(x){x.setAttribute("aria-selected","false")});
+      document.querySelectorAll(".tabs button[data-tab]").forEach(function(x){x.setAttribute("aria-selected","false")});
       b.setAttribute("aria-selected","true");cur=b.dataset.tab;show();
     });
   });
@@ -157,9 +157,9 @@ function renderTable(){
   tnote.textContent=t.note;
   tcount.textContent=shown+" of "+t.rows.length+" rows";
 }
-document.querySelectorAll('.tabs button').forEach(function(b){
+document.querySelectorAll('.tabs button[data-tab]').forEach(function(b){
   b.addEventListener("click",function(){
-    document.querySelectorAll('.tabs button').forEach(function(x){x.setAttribute("aria-selected","false")});
+    document.querySelectorAll('.tabs button[data-tab]').forEach(function(x){x.setAttribute("aria-selected","false")});
     b.setAttribute("aria-selected","true");current=b.dataset.tab;renderTable();
   });
 });

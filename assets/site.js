@@ -58,3 +58,24 @@ document.querySelectorAll("[data-copy]").forEach(function(b){
   });
 });
 })();
+
+/* "Delivering excellence" tabs on the homepage: same contract as the
+   technical tables — one button per panel, aria-selected drives the rule. */
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll("[data-xtab]"));
+  if(!tabs.length)return;
+  var panels=[].slice.call(document.querySelectorAll("[data-xpanel]"));
+  function show(key){
+    tabs.forEach(function(t){t.setAttribute("aria-selected",String(t.dataset.xtab===key))});
+    panels.forEach(function(p){p.hidden=p.dataset.xpanel!==key});
+  }
+  tabs.forEach(function(t){
+    t.addEventListener("click",function(){show(t.dataset.xtab)});
+    t.addEventListener("keydown",function(e){
+      var i=tabs.indexOf(t),n=null;
+      if(e.key==="ArrowRight")n=tabs[(i+1)%tabs.length];
+      else if(e.key==="ArrowLeft")n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){e.preventDefault();show(n.dataset.xtab);n.focus()}
+    });
+  });
+})();
