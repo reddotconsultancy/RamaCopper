@@ -631,3 +631,25 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .ptake li{font-size:var(--fs-body);line-height:var(--lh-body);color:var(--ink);margin-bottom:8px}
 .pcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 @media(max-width:900px){.pgridl{grid-template-columns:1fr}.paside{position:static}}
+
+/* ================= PRODUCT RANGE STRIP ================= */
+/* the range image is a cutout on transparency, so it sits straight on the
+   page background with no frame; the carton shot keeps a border like .dphoto */
+.rstrip{margin:0 0 clamp(28px,4vw,48px)}
+.rstrip img{display:block;width:100%;height:auto}
+.rshot{margin:0;border:1px solid var(--line);background:var(--bg-2)}
+.rshot img{display:block;width:100%;height:auto}
+.rshot figcaption{
+  padding:14px 18px;border-top:1px solid var(--line);
+  font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
+  line-height:var(--lh-body);color:var(--ink-3);
+}
+
+/* ================= PLANT FLOOR (responsible manufacturing) ================= */
+.pfloor{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4.5vw,64px);align-items:center}
+@media(max-width:760px){.pfloor{grid-template-columns:1fr}}
+.pshot{margin:0;overflow:hidden;border-radius:3px;background:var(--bg-2)}
+.pshot img{display:block;width:100%;height:auto}
+.pfcopy h2{margin:0 0 18px}
+.pfcopy p{color:var(--ink-2);line-height:var(--lh-relaxed);margin-bottom:16px}
+.pfcopy p:last-child{margin-bottom:0}
