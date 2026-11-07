@@ -98,7 +98,14 @@ html{scroll-behavior:smooth;scroll-padding-top:calc(var(--hdr) + 9px)}
 .section{padding-block:var(--sect)}
 /* subpages open straight into a section, so it has to clear the fixed bar */
 .section.first{padding-top:calc(var(--sect) + var(--hdr))}
-.lede{color:var(--ink-2);font-size:var(--fs-lede);max-width:60ch}
+.lede{
+  color:var(--ink-2);font-size:var(--fs-lede);
+  /* 60ch left this section's lede 6px short, dropping "it." onto a line
+     of its own; 64ch is still inside a comfortable measure */
+  max-width:64ch;
+  /* and where a lede still wraps, never strand a single word */
+  text-wrap:pretty;
+}
 
 /* ================= HEADER ================= */
 /* two tiers: tagline + logo on top, a hairline, then the nav on the centre line */
@@ -736,3 +743,11 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .xtabs .tabs button svg{flex:none;opacity:.85}
 .xtabs .tabs button[aria-selected="true"] svg{color:var(--accent);opacity:1}
 @media(max-width:560px){.xtabs .tabs button{justify-content:flex-start}}
+
+/* ================= PACKING PHOTO ================= */
+.packshot{margin:0;align-self:center}
+.packshot img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg)}
+.packshot figcaption{
+  margin-top:12px;font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
+  line-height:var(--lh-body);color:var(--ink-3);
+}
