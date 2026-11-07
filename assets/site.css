@@ -176,7 +176,8 @@ nav.main a[aria-current="page"]::after{transform:scaleX(1)}
   display:flex;align-items:flex-end;overflow:hidden;
   padding:128px var(--edge) clamp(32px,4vw,52px);
 }
-.hero > img{
+.hero > picture{display:contents}
+.hero > img, .hero > picture > img{
   position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 50%;z-index:0;
 }
 .hero::after{
@@ -232,7 +233,7 @@ nav.main a[aria-current="page"]::after{transform:scaleX(1)}
 }
 @media(max-width:820px){
   .hero{padding-top:108px;padding-bottom:40px}
-  .hero > img{object-position:50% 50%}
+  .hero > img, .hero > picture > img{object-position:50% 50%}
   .hero h1{max-width:18ch}
   .facts{gap:12px 26px}
 }
@@ -557,7 +558,7 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 @media (max-width:560px){
   /* the headline was capped at 18ch, which forced five lines in a 350px column */
   .hero{padding:96px var(--edge) 34px}
-  .hero > img{object-position:50% 42%}
+  .hero > img, .hero > picture > img{object-position:50% 42%}
   .hero::after{
     background:linear-gradient(to top,
       rgba(10,7,4,.94) 0%, rgba(10,7,4,.80) 40%, rgba(10,7,4,.42) 74%, rgba(10,7,4,.20) 100%);
