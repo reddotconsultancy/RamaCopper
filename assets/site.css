@@ -729,3 +729,10 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
   transition:background-color .16s,color .16s;
 }
 .fsocial a:hover{background:var(--accent);color:var(--btn-ink)}
+
+/* icons sit with the tab label, and inherit its colour so they go orange
+   with the active tab and dim with the inactive ones */
+.xtabs .tabs button{display:inline-flex;align-items:center;gap:9px}
+.xtabs .tabs button svg{flex:none;opacity:.85}
+.xtabs .tabs button[aria-selected="true"] svg{color:var(--accent);opacity:1}
+@media(max-width:560px){.xtabs .tabs button{justify-content:flex-start}}
