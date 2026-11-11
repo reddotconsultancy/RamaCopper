@@ -383,6 +383,12 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .md-photo img{width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
 .md-photo .quote{margin:24px 0 0}
 .md-photo blockquote{font-size:var(--fs-h4)}
+/* with the plant section gone the copy column runs much longer than the
+   portrait, so the portrait follows the reader instead of scrolling away and
+   leaving the left column empty (same trick as the product pages) */
+@media(min-width:841px){
+  .about-md .md-photo{position:sticky;top:calc(var(--hdr) + 28px)}
+}
 @media(max-width:840px){
   .about-md{grid-template-columns:1fr;grid-template-rows:none}
   .about-md>.label,.about-md .md-photo,.about-md .about-copy{grid-column:auto;grid-row:auto}
@@ -776,12 +782,54 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
   .split .dcopy{order:1}
 }
 
-/* ================= ABOUT: PLANT PHOTO ================= */
-#plant .shead h2 em{font-style:normal;color:var(--brand)}
-.plantshot{margin:clamp(20px,3vw,32px) 0 0}
-.plantshot img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
 /* the copy column runs longer than the photos; on desktop the photos follow
    the reader down the page instead of leaving an empty column beside the text */
 @media(min-width:841px){
   .detail .dmedia{position:sticky;top:calc(var(--hdr) + 24px)}
 }
+
+/* ================= HOME: PLANT PHOTO BESIDE THE TAB PANELS =================
+   the panels are capped at 74ch, which left the right half of the band empty;
+   the photo now sits in that column and holds the same row as whichever
+   panel is showing (the hidden ones are display:none, so they take no cell) */
+.xtabs{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.78fr);
+  column-gap:clamp(30px,5vw,72px);align-items:start;
+}
+.xtabs>.tabs{grid-column:1/-1}
+.xtabs>.xpanel{grid-column:1;grid-row:2}
+.xshot{grid-column:2;grid-row:2;margin:clamp(26px,3.4vw,40px) 0 0}
+.xshot img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
+.xshot figcaption{
+  margin-top:12px;font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
+  line-height:var(--lh-body);color:var(--ink-3);
+}
+@media(max-width:900px){
+  .xtabs{grid-template-columns:minmax(0,1fr)}
+  .xtabs>.xpanel,.xshot{grid-column:1;grid-row:auto}
+  .xshot{margin-top:28px}
+}
+
+/* ================= HOME: THE MANAGING DIRECTOR BESIDE HIS QUOTE ================= */
+.mdquote{
+  display:grid;grid-template-columns:140px minmax(0,1fr);
+  gap:clamp(16px,2vw,22px);align-items:center;margin:0 0 24px;
+}
+.mdquote img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
+.mdquote .quote{margin:0}
+.mdquote blockquote{font-size:var(--fs-h4)}
+.mdquote cite{letter-spacing:var(--ls-caps-sm)}
+@media(max-width:700px){
+  .mdquote{grid-template-columns:minmax(0,1fr);gap:20px}
+  .mdquote picture{display:block;max-width:180px}
+}
+
+/* ================= HOME: PACKING NOTES ================= */
+/* the packing copy ended well above the photo, leaving the column empty */
+.packnotes{margin:26px 0 0;display:flex;flex-direction:column;gap:16px}
+.packnotes>div{padding-top:16px;border-top:1px solid var(--line)}
+.packnotes dt{
+  font-size:var(--fs-label);letter-spacing:var(--ls-caps);text-transform:uppercase;
+  color:var(--ink-3);margin-bottom:7px;
+}
+.packnotes dd{margin:0;font-size:var(--fs-body);color:var(--ink-2);line-height:var(--lh-relaxed)}
