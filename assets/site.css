@@ -810,18 +810,24 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
   .xshot{margin-top:28px}
 }
 
-/* ================= HOME: THE MANAGING DIRECTOR BESIDE HIS QUOTE ================= */
-.mdquote{
-  display:grid;grid-template-columns:clamp(190px,17vw,230px) minmax(0,1fr);
-  gap:clamp(20px,2.4vw,28px);align-items:center;margin:0 0 26px;
-}
-.mdquote img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
-.mdquote .quote{margin:0}
-.mdquote blockquote{font-size:var(--fs-h4)}
-.mdquote cite{letter-spacing:var(--ls-caps-sm)}
-@media(max-width:700px){
-  .mdquote{grid-template-columns:minmax(0,1fr);gap:22px}
-  .mdquote picture{display:block;max-width:240px}
+/* ================= HOME: THE MANAGING DIRECTOR ON HIS OWN SIDE =================
+   the portrait takes the left column on its own; the quote, the one-line
+   company note and vision/mission share the right one, which makes the two
+   columns run to roughly the same depth */
+.about-home{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:auto 1fr;row-gap:0}
+.about-home>.label{grid-column:2;margin-bottom:16px}
+.about-home .mdphoto{grid-column:1;grid-row:2;margin:0}
+.about-home .mdphoto img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg)}
+.about-home .about-side{grid-column:2;grid-row:2}
+.about-home .quote{margin-bottom:22px}
+.about-home .quote blockquote{font-size:var(--fs-h4)}
+.about-home .quote cite{letter-spacing:var(--ls-caps-sm)}
+.about-home .lede{margin:0}
+.about-home .vmwrap{margin-top:34px;padding-top:30px;border-top:1px solid var(--line);gap:28px}
+@media(max-width:840px){
+  .about-home{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .about-home>.label,.about-home .mdphoto,.about-home .about-side{grid-column:auto;grid-row:auto}
+  .about-home .mdphoto{max-width:420px;margin-bottom:26px}
 }
 
 /* ================= HOME: PACKING NOTES ================= */
