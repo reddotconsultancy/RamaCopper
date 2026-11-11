@@ -9,13 +9,15 @@ ErrorDocument 404 /404.html
   RewriteCond %{HTTPS} off
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+  # ramacopper.com is the main domain, so rgcopper.com hands its rankings
+  # over to it. Matches www too, so it is a single hop. Left off
+  # .well-known so AutoSSL can still renew the rgcopper.com certificate.
+  RewriteCond %{REQUEST_URI} !^/\.well-known/ [NC]
+  RewriteCond %{HTTP_HOST} ^(www\.)?rgcopper\.com$ [NC]
+  RewriteRule ^ https://ramacopper.com%{REQUEST_URI} [L,R=301]
+
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
-
-  # ramacopper.com is the main domain. Turn this on once ramacopper.com
-  # serves this site, so rgcopper.com hands its rankings over to it.
-  # RewriteCond %{HTTP_HOST} ^rgcopper\.com$ [NC]
-  # RewriteRule ^ https://ramacopper.com%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 # Old WordPress addresses, so their rankings and backlinks carry over
