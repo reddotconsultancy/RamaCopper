@@ -658,13 +658,31 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 }
 
 /* ================= PLANT FLOOR (responsible manufacturing) ================= */
-.pfloor{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4.5vw,64px);align-items:center}
-@media(max-width:760px){.pfloor{grid-template-columns:1fr}}
-.pshot{margin:0;overflow:hidden;border-radius:3px;background:var(--bg-2)}
-.pshot img{display:block;width:100%;height:auto}
-.pfcopy h2{margin:0 0 18px}
-.pfcopy p{color:var(--ink-2);line-height:var(--lh-relaxed);margin-bottom:16px}
-.pfcopy p:last-child{margin-bottom:0}
+/* the copy leads and the portrait photo follows on the right, so this
+   section alternates with the photo-left section above it */
+#plant{padding-top:clamp(8px,2vw,24px)}
+.pfloor{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;
+  gap:clamp(32px,5vw,80px);align-items:center;
+}
+.pshot{margin:0;justify-self:end}
+.pshot img{
+  /* a tall portrait: show all of it, but at a height that sits beside the copy */
+  display:block;width:auto;max-width:100%;max-height:min(600px,78vh);
+  border-radius:3px;background:var(--bg-2);
+}
+.pfcopy{max-width:58ch}
+.pfcopy h2{margin:0 0 20px;font-size:var(--fs-h2)}
+.pfcopy p:not(.label){color:var(--ink-2);line-height:var(--lh-relaxed);margin-bottom:16px;font-size:var(--fs-body-lg)}
+.pfcopy p:not(.label):last-child{margin-bottom:0}
+@media(max-width:760px){
+  .pfloor{grid-template-columns:1fr}
+  .pshot{justify-self:center}
+  .pshot img{max-height:70vh}
+}
+/* the top section's photo is shorter than its copy: centre it rather than
+   leaving a dead block underneath */
+.split-mid{align-items:center}
 
 /* ================= "DELIVERING EXCELLENCE" TABS ================= */
 /* reuses .tabs from the technical tables; the panels are plain prose */
