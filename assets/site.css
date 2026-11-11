@@ -39,8 +39,8 @@
   --fs-h1:clamp(26px,3.4vw,42px);
   --fs-hero:clamp(1.85rem,3.55vw,3rem);
   --fs-hero-sm:27px;    /* hero on narrow phones, below the clamp floor   */
-  --fs-script:1.7em;    /* the cursive "For", relative to its own line     */
-  --fs-script-sm:1.4em;
+  --fs-script:3.3em;    /* the cursive "For", relative to its own line     */
+  --fs-script-sm:2.6em;
 
   --ls-display:-.024em; /* big headings, optical tightening                */
   --ls-heading:-.015em; /* mid headings                                     */
@@ -125,7 +125,7 @@ header.site{
   margin:0;display:flex;align-items:center;gap:12px;
   font-size:var(--fs-body-lg);line-height:var(--lh-snug);letter-spacing:var(--ls-body);color:var(--ink);
 }
-.tag em{font-family:"Kaushan Script",cursive;font-style:normal;font-weight:400;font-size:var(--fs-script);color:var(--ink);line-height:var(--lh-1);letter-spacing:var(--ls-body);transform:translateY(-.06em)}
+.tag em{font-family:"Mrs Saint Delafield",cursive;font-style:normal;font-weight:400;font-size:var(--fs-script);color:var(--ink);line-height:var(--lh-1);letter-spacing:var(--ls-body);transform:translateY(.04em);-webkit-text-stroke:.35px currentColor;margin-right:-.06em}
 .tag span{display:flex;flex-direction:column;gap:2px}
 .tag b{font-weight:500;color:var(--brand)}
 .brand{display:flex;align-items:center;text-decoration:none;flex:none;justify-self:end}
@@ -499,7 +499,9 @@ table.spec td.wide{white-space:normal;min-width:145px}
 .gi::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none}
 .gi.wide{grid-column:span 2;grid-row:span 2}
 .gi.tall{grid-row:span 2}
-@media(max-width:1000px){.ggrid{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:190px}}
+/* every set is laid out to fill a 4-column grid exactly (and a 2-column one);
+   3 columns cannot pack them without holes, so tablets keep 4, smaller */
+@media(max-width:1000px){.ggrid{grid-auto-rows:150px;gap:8px}}
 @media(max-width:640px){.ggrid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px;gap:6px}}
 
 /* lightbox */
@@ -644,19 +646,6 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .pcta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 @media(max-width:900px){.pgridl{grid-template-columns:1fr}.paside{position:static}}
 
-/* ================= PRODUCT RANGE STRIP ================= */
-/* the range image is a cutout on transparency, so it sits straight on the
-   page background with no frame; the carton shot keeps a border like .dphoto */
-.rstrip{margin:0 0 clamp(28px,4vw,48px)}
-.rstrip img{display:block;width:100%;height:auto}
-.rshot{margin:0;border:1px solid var(--line);background:var(--bg-2)}
-.rshot img{display:block;width:100%;height:auto}
-.rshot figcaption{
-  padding:14px 18px;border-top:1px solid var(--line);
-  font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
-  line-height:var(--lh-body);color:var(--ink-3);
-}
-
 /* ================= PLANT FLOOR (responsible manufacturing) ================= */
 /* the copy leads and the portrait photo follows on the right, so this
    section alternates with the photo-left section above it */
@@ -772,4 +761,27 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .packshot figcaption{
   margin-top:12px;font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
   line-height:var(--lh-body);color:var(--ink-3);
+}
+
+/* ================= PRODUCT PAGE: TWO PHOTOS ================= */
+/* the copy column runs longer than one photo, so a second photo fills the
+   left column; it keeps its own ratio rather than being cropped to 3:2 */
+.dmedia{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,20px)}
+.dphoto.dphoto-2{aspect-ratio:auto}
+.dphoto.dphoto-2 img{height:auto}
+@media(max-width:840px){
+  /* on one column, show the main photo, then the copy, then the second photo */
+  .dmedia{display:contents}
+  .split .dphoto-2{order:2}
+  .split .dcopy{order:1}
+}
+
+/* ================= ABOUT: PLANT PHOTO ================= */
+#plant .shead h2 em{font-style:normal;color:var(--brand)}
+.plantshot{margin:clamp(20px,3vw,32px) 0 0}
+.plantshot img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
+/* the copy column runs longer than the photos; on desktop the photos follow
+   the reader down the page instead of leaving an empty column beside the text */
+@media(min-width:841px){
+  .detail .dmedia{position:sticky;top:calc(var(--hdr) + 24px)}
 }

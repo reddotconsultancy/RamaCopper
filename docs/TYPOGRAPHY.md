@@ -7,7 +7,7 @@ one-off.
 
 ## Families
 
-The site runs on **one typeface**: DM Sans, with Kaushan Script used for exactly
+The site runs on **one typeface**: DM Sans, with Mrs Saint Delafield used for exactly
 one word. Three family hooks exist and all resolve to DM Sans; they are kept as
 role names so a future change can split them without touching call sites.
 
@@ -16,10 +16,10 @@ role names so a future change can split them without touching call sites.
 | `--f-sans` | DM Sans → DM Sans Fallback → system-ui | everything |
 | `--f-display` | `var(--f-sans)` | headings (role hook) |
 | `--f-mono` | `var(--f-sans)` | labels, tables, addresses (role hook) |
-| — | Kaushan Script | the cursive "For" in the tagline, nothing else |
+| — | Mrs Saint Delafield | the cursive "For" in the tagline, nothing else |
 
 Loaded from Google Fonts: `DM Sans` 300/400/500/600 plus 400/500 italic, and
-`Kaushan Script` 400. `DM Sans Fallback` is a local Arial metric-match that
+`Mrs Saint Delafield` 400. `DM Sans Fallback` is a local Arial metric-match that
 holds the layout while the webfont arrives, so there is no reflow.
 
 ## Size scale

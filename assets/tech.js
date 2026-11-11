@@ -107,7 +107,7 @@ var f=function(v,d){return v===null||v===undefined?"-":Number(v).toFixed(d)};
 
 var TABLES={
  covering:{
-  note:"Covering gradewise of copper winding wires. Conductor resistance at 20 °C for 1 metre. A dash means the value is not published for that gauge.",
+  note:"Covering thickness by grade for copper winding wire. Conductor resistance is given at 20 °C per metre. A dash means the value is not published for that gauge.",
   head:'<tr class="grp"><th></th><th></th><th colspan="2">Fine · Grade 1</th><th colspan="2">Medium · Grade 2</th><th colspan="2">Thick · Grade 3</th><th colspan="3">Conductor resistance @ 20 °C (Ω/m)</th></tr>'+
        '<tr><th>SWG / mm</th><th>Cond. tol. mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Min. inc. mm</th><th>Max. o/a mm</th><th>Nominal</th><th>Maximum</th><th>Minimum</th></tr>',
   rows:COVERING.map(function(r){
