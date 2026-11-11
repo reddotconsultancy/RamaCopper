@@ -1,13 +1,21 @@
-# Apache (the current ramacopper.com host). Vercel reads vercel.json instead.
+# Apache (the cPanel hosting). Vercel reads vercel.json instead.
 
 ErrorDocument 404 /404.html
 
-# One canonical origin: https://ramacopper.com
+# Always HTTPS, always without www, on whichever domain is serving this.
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteCond %{HTTPS} off [OR]
-  RewriteCond %{HTTP_HOST} ^www\. [NC]
-  RewriteRule ^ https://ramacopper.com%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # ramacopper.com is the main domain. Turn this on once ramacopper.com
+  # serves this site, so rgcopper.com hands its rankings over to it.
+  # RewriteCond %{HTTP_HOST} ^rgcopper\.com$ [NC]
+  # RewriteRule ^ https://ramacopper.com%{REQUEST_URI} [L,R=301]
 </IfModule>
 
 # Old WordPress addresses, so their rankings and backlinks carry over
