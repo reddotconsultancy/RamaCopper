@@ -620,7 +620,11 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .pmeta{margin-top:18px;font-family:var(--f-mono);font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);text-transform:uppercase;color:var(--ink-3)}
 .pmeta span{margin-inline:8px}
 .phero{margin-top:clamp(28px,4vw,48px)}
-.phero img{width:100%;height:auto;aspect-ratio:2.4/1;object-fit:cover;border-radius:3px;display:block}
+.phero img{
+  /* show the whole photograph: these are 3:2, and a forced 2.4:1 strip
+     cut 37% of the height away, losing the subject on several pages */
+  width:100%;height:auto;border-radius:3px;display:block;
+}
 .pgridl{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(30px,6vw,90px);padding-block:clamp(36px,5vw,64px)}
 .paside{position:sticky;top:calc(var(--hdr) + 24px);display:flex;flex-direction:column;gap:28px}
 .ptoc ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
