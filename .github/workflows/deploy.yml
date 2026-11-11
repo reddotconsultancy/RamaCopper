@@ -34,12 +34,10 @@ jobs:
             server_secret: RAMA_FTP_SERVER
             user_secret: RAMA_FTP_USERNAME
             pass_secret: RAMA_FTP_PASSWORD
-          # rgcopper.com joins once its old WordPress is cleared off the host,
-          # so a deploy never half-overwrites a site that is still running.
-          # - site: rgcopper.com
-          #   server_secret: FTP_SERVER
-          #   user_secret: FTP_USERNAME
-          #   pass_secret: FTP_PASSWORD
+          - site: rgcopper.com
+            server_secret: FTP_SERVER
+            user_secret: FTP_USERNAME
+            pass_secret: FTP_PASSWORD
     name: ${{ matrix.site }}
     steps:
       - name: Check out the site
