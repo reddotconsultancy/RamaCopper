@@ -1,7 +1,13 @@
 name: Deploy to cPanel
 
-# Every push to main uploads the site to the hosting over FTPS.
-# Only changed files are sent: the action keeps a sync state file on the server.
+# Every push to main uploads the site to both hostings over FTPS.
+# Only changed files are sent: the action keeps a sync state file on each server.
+#
+#   ramacopper.com  ->  bh-66.webhostbox.net    (main domain)
+#   rgcopper.com    ->  bh-in-3.webhostbox.net
+#
+# SSH is switched off on both accounts, which is why this uploads over FTPS
+# rather than the server pulling from git.
 
 on:
   push:
@@ -9,9 +15,9 @@ on:
   workflow_dispatch:
     inputs:
       target:
-        description: "Folder on the server to deploy into, relative to public_html"
+        description: "Folder on the server, relative to public_html"
         required: true
-        default: "_newsite/"
+        default: "./"
 
 concurrency:
   group: deploy-cpanel
@@ -20,6 +26,21 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - site: ramacopper.com
+            server_secret: RAMA_FTP_SERVER
+            user_secret: RAMA_FTP_USERNAME
+            pass_secret: RAMA_FTP_PASSWORD
+          # rgcopper.com joins once its old WordPress is cleared off the host,
+          # so a deploy never half-overwrites a site that is still running.
+          # - site: rgcopper.com
+          #   server_secret: FTP_SERVER
+          #   user_secret: FTP_USERNAME
+          #   pass_secret: FTP_PASSWORD
+    name: ${{ matrix.site }}
     steps:
       - name: Check out the site
         uses: actions/checkout@v4.2.2
@@ -27,13 +48,13 @@ jobs:
       - name: Upload over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets[matrix.server_secret] }}
+          username: ${{ secrets[matrix.user_secret] }}
+          password: ${{ secrets[matrix.pass_secret] }}
           protocol: ftps
           port: 21
           local-dir: ./
-          server-dir: ${{ github.event.inputs.target || '_newsite/' }}
+          server-dir: ${{ github.event.inputs.target || './' }}
           dangerous-clean-slate: false
           exclude: |
             **/.git*
