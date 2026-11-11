@@ -812,16 +812,16 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 
 /* ================= HOME: THE MANAGING DIRECTOR BESIDE HIS QUOTE ================= */
 .mdquote{
-  display:grid;grid-template-columns:140px minmax(0,1fr);
-  gap:clamp(16px,2vw,22px);align-items:center;margin:0 0 24px;
+  display:grid;grid-template-columns:clamp(190px,17vw,230px) minmax(0,1fr);
+  gap:clamp(20px,2.4vw,28px);align-items:center;margin:0 0 26px;
 }
 .mdquote img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
 .mdquote .quote{margin:0}
 .mdquote blockquote{font-size:var(--fs-h4)}
 .mdquote cite{letter-spacing:var(--ls-caps-sm)}
 @media(max-width:700px){
-  .mdquote{grid-template-columns:minmax(0,1fr);gap:20px}
-  .mdquote picture{display:block;max-width:180px}
+  .mdquote{grid-template-columns:minmax(0,1fr);gap:22px}
+  .mdquote picture{display:block;max-width:240px}
 }
 
 /* ================= HOME: PACKING NOTES ================= */
