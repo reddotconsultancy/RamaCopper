@@ -53,8 +53,18 @@ document.querySelectorAll("[data-copy]").forEach(function(b){
     var lbl=b.querySelector("span"),txt=b.getAttribute("data-copy");
     function done(){b.classList.add("copied");lbl.textContent="Copied";
       setTimeout(function(){b.classList.remove("copied");lbl.textContent="Copy"},1600)}
-    if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done);
-    else{var t=document.createElement("textarea");t.value=txt;document.body.appendChild(t);t.select();document.execCommand("copy");t.remove();done()}
+    /* the async clipboard is refused outright in some browsers and webviews,
+       so a rejection has to fall through to the old method rather than
+       leaving the button silent and nothing on the clipboard */
+    function fallback(){
+      var t=document.createElement("textarea");t.value=txt;t.setAttribute("readonly","");
+      t.style.cssText="position:fixed;top:0;left:-9999px";document.body.appendChild(t);
+      t.select();t.setSelectionRange(0,t.value.length);
+      var ok=false;try{ok=document.execCommand("copy")}catch(e){}
+      t.remove();if(ok)done();
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,fallback);
+    else fallback();
   });
 });
 })();
