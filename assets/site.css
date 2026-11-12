@@ -380,7 +380,10 @@ table.spec td.wide{white-space:normal;min-width:145px}
 }
 .about-copy .vm p,.about-copy .vm li{font-size:var(--fs-body);line-height:var(--lh-relaxed)}
 .md-photo{margin:0}
-.md-photo img{width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
+.md-photo img{
+  width:100%;height:auto;aspect-ratio:960/1200;object-fit:cover;
+  display:block;border-radius:3px;background:var(--bg-2);
+}
 .md-photo .quote{margin:24px 0 0}
 .md-photo blockquote{font-size:var(--fs-h4)}
 /* with the plant section gone the copy column runs much longer than the
@@ -390,7 +393,7 @@ table.spec td.wide{white-space:normal;min-width:145px}
   .about-md .md-photo{position:sticky;top:calc(var(--hdr) + 28px)}
 }
 @media(max-width:840px){
-  .about-md{grid-template-columns:1fr;grid-template-rows:none}
+  .about-md{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
   .about-md>.label,.about-md .md-photo,.about-md .about-copy{grid-column:auto;grid-row:auto}
   .md-photo{order:-1;max-width:420px;margin-bottom:28px}
 }
@@ -799,14 +802,17 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .xtabs>.tabs{grid-column:1/-1}
 .xtabs>.xpanel{grid-column:1;grid-row:2}
 .xshot{grid-column:2;grid-row:2;margin:clamp(26px,3.4vw,40px) 0 0}
-.xshot img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg-2)}
+.xshot img{
+  display:block;width:100%;height:auto;aspect-ratio:1600/902;object-fit:cover;
+  border-radius:3px;background:var(--bg-2);
+}
 .xshot figcaption{
   margin-top:12px;font-size:var(--fs-label);letter-spacing:var(--ls-caps-sm);
   line-height:var(--lh-body);color:var(--ink-3);
 }
 @media(max-width:900px){
-  .xtabs{grid-template-columns:minmax(0,1fr)}
-  .xtabs>.xpanel,.xshot{grid-column:1;grid-row:auto}
+  .xtabs{display:block}
+  .xtabs>.tabs,.xtabs>.xpanel,.xshot{grid-column:auto;grid-row:auto}
   .xshot{margin-top:28px}
 }
 
@@ -817,7 +823,10 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .about-home{grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:auto 1fr;row-gap:0}
 .about-home>.label{grid-column:2;margin-bottom:16px}
 .about-home .mdphoto{grid-column:1;grid-row:2;margin:0}
-.about-home .mdphoto img{display:block;width:100%;height:auto;border-radius:3px;background:var(--bg)}
+.about-home .mdphoto img{
+  display:block;width:100%;height:auto;aspect-ratio:852/1065;object-fit:cover;
+  border-radius:3px;background:var(--bg);
+}
 .about-home .about-side{grid-column:2;grid-row:2}
 .about-home .quote{margin-bottom:22px}
 .about-home .quote blockquote{font-size:var(--fs-h4)}
@@ -825,9 +834,10 @@ footer.site{background:#0A0B0A;border-top:1px solid var(--line-2)}
 .about-home .lede{margin:0}
 .about-home .vmwrap{margin-top:34px;padding-top:30px;border-top:1px solid var(--line);gap:28px}
 @media(max-width:840px){
-  .about-home{grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+  .about-home{display:block}
   .about-home>.label,.about-home .mdphoto,.about-home .about-side{grid-column:auto;grid-row:auto}
-  .about-home .mdphoto{max-width:420px;margin-bottom:26px}
+  .about-home>.label{margin-bottom:16px}
+  .about-home .mdphoto{max-width:420px;margin:0 0 26px}
 }
 
 /* ================= HOME: PACKING NOTES ================= */
